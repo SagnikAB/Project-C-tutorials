@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learn C Programming: From Beginner to Pro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Simple review form interaction
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('.review-form form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const name = document.getElementById('name').value;
+                    const review = document.getElementById('review').value;
+                    const reviewList = document.getElementById('reviews');
+                    const entry = document.createElement('div');
+                    entry.className = 'review-entry';
+                    entry.innerHTML = `<strong>${name}</strong><p>${review}</p>`;
+                    reviewList.appendChild(entry);
+                    form.reset();
+                });
+            }
+        });
+        // Toggle code visibility
+        function toggleCode(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === "none") {
+                el.style.display = "block";
+            } else {
+                el.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Learn C Programming: From Beginner to Pro</h1>
+        <nav>
+            <a href="#intro">Introduction</a>
+            <a href="#setup">Setup</a>
+            <a href="#syntax">Syntax</a>
+            <a href="#datatypes">Data Types</a>
+            <a href="#operators">Operators</a>
+            <a href="#control">Control Flow</a>
+            <a href="#functions">Functions</a>
+            <a href="#arrays">Arrays & Strings</a>
+            <a href="#pointers">Pointers</a>
+            <a href="#structures">Structures</a>
+            <a href="#fileio">File I/O</a>
+            <a href="#preprocessor">Preprocessor</a>
+            <a href="#dynamic">Dynamic Structures</a>
+            <a href="#error">Error Handling</a>
+            <a href="#advanced">Advanced</a>
+            <a href="#best">Best Practices</a>
+            <a href="#contact">Contact</a>
+            <a href="#review">Review</a>
+        </nav>
+        <p>Your interactive guide to mastering C programming</p>
+    </header>
+    <main>
+        <section id="intro">
+            <h2>Introduction to C Programming</h2>
+            <p>
+                C is a foundational language in computer science, known for its speed, portability, and direct access to hardware. It is used to build operating systems, embedded systems, and high-performance applications. Learning C helps you understand how computers work at a low level and gives you the skills to write efficient, reliable code. Whether you are a beginner or a seasoned developer, mastering C will deepen your understanding of programming concepts and system architecture.
+            </p>
+        </section>
+        <section id="setup">
+            <h2>Setting Up Your Environment</h2>
+            <p>
+                To write and run C programs, you need a compiler and an editor. GCC is popular on Linux, while MinGW and TDM-GCC are common on Windows. IDEs like Code::Blocks or Visual Studio Code make coding easier. After installing, create a file named <code>hello.c</code> and compile it using the terminal:
+            </p>
+            <button onclick="toggleCode('code1')">Show/Hide Example</button>
+            <pre id="code1" style="display:none;"><code>// hello.c
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+            </code></pre>
+        </section>
+        <section id="syntax">
+            <h2>Basic Syntax and Structure</h2>
+            <p>
+                Every C program starts with <code>main()</code>. Statements end with semicolons, and curly braces define blocks. Variables must be declared before use. Comments use <code>//</code> for single line and <code>/* ... */</code> for multi-line. Here is a simple example:
+            </p>
+            <button onclick="toggleCode('code2')">Show/Hide Example</button>
+            <pre id="code2" style="display:none;"><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int age = 20; // variable declaration
+    printf("Age: %d\n", age);
+    return 0;
+}
+            </code></pre>
+        </section>
+        <section id="datatypes">
+            <h2>Data Types and Variables</h2>
+            <p>
+                C supports several data types: <code>int</code> (integer), <code>float</code> (decimal), <code>char</code> (character), <code>double</code> (large decimal), and <code>void</code> (no value). Variables must be declared with a type. Constants use <code>const</code> keyword.
+            </p>
+            <button onclick="toggleCode('code3')">Show/Hide Example</button>
+            <pre id="code3" style="display:none;"><code>
+int count = 10;
+float price = 99.99;
+char grade = 'A';
+const double PI = 3.14159;
+            </code></pre>
+        </section>
+        <section id="operators">
+            <h2>Operators in C</h2>
+            <p>
+                Operators perform operations on variables and values. Arithmetic operators include <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>. Relational operators are <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>. Logical operators are <code>&&</code>, <code>||</code>, <code>!</code>.
+            </p>
+            <button onclick="toggleCode('code4')">Show/Hide Example</button>
+            <pre id="code4" style="display:none;"><code>
+int a = 5, b = 3;
+int sum = a + b; // 8
+if (a > b && b != 0) {
+    printf("a is greater and b is not zero\n");
+}
+            </code></pre>
+        </section>
+        <section id="control">
+            <h2>Control Flow: Conditionals and Loops</h2>
+            <p>
+                Control flow lets you make decisions and repeat actions. <code>if</code>, <code>else</code>, and <code>switch</code> handle decisions. Loops include <code>for</code>, <code>while</code>, and <code>do-while</code>. Example:
+            </p>
+            <button onclick="toggleCode('code5')">Show/Hide Example</button>
+            <pre id="code5" style="display:none;"><code>
+for (int i = 0; i &lt; 5; i++) {
+    printf("%d ", i);
+}
+
+if (sum &gt; 10) {
+    printf("Sum is large\n");
+} else {
+    printf("Sum is small\n");
+}
+            </code></pre>
+        </section>
+        <section id="functions">
+            <h2>Functions and Modular Programming</h2>
+            <p>
+                Functions break code into reusable blocks. Each function has a return type, name, and parameters. Functions improve readability and maintainability. Example:
+            </p>
+            <button onclick="toggleCode('code6')">Show/Hide Example</button>
+            <pre id="code6" style="display:none;"><code>
+int add(int x, int y) {
+    return x + y;
+}
+
+int main() {
+    int result = add(5, 7);
+    printf("Result: %d\n", result);
+    return 0;
+}
+            </code></pre>
+        </section>
+        <section id="arrays">
+            <h2>Arrays and Strings</h2>
+            <p>
+                Arrays store multiple values of the same type. Strings are arrays of characters ending with <code>'\0'</code>. Example:
+            </p>
+            <button onclick="toggleCode('code7')">Show/Hide Example</button>
+            <pre id="code7" style="display:none;"><code>
+int numbers[5] = {1, 2, 3, 4, 5};
+char name[] = "Alice";
+
+for (int i = 0; i &lt; 5; i++) {
+    printf("%d ", numbers[i]);
+}
+printf("Name: %s\n", name);
+            </code></pre>
+        </section>
+        <section id="pointers">
+            <h2>Pointers and Memory Management</h2>
+            <p>
+                Pointers store memory addresses. They allow dynamic memory allocation and manipulation. Use <code>malloc()</code> to allocate memory and <code>free()</code> to release it. Example:
+            </p>
+            <button onclick="toggleCode('code8')">Show/Hide Example</button>
+            <pre id="code8" style="display:none;"><code>
+int *ptr;
+ptr = (int*) malloc(sizeof(int) * 5);
+if (ptr != NULL) {
+    ptr[0] = 10;
+    printf("%d\n", ptr[0]);
+    free(ptr);
+}
+            </code></pre>
+        </section>
+        <section id="structures">
+            <h2>Structures and Unions</h2>
+            <p>
+                Structures group related variables. Unions store different data types in the same memory location. Example:
+            </p>
+            <button onclick="toggleCode('code9')">Show/Hide Example</button>
+            <pre id="code9" style="display:none;"><code>
+struct Student {
+    char name[50];
+    int age;
+    float marks;
+};
+
+struct Student s1 = {"Bob", 21, 88.5};
+printf("Name: %s, Age: %d, Marks: %.2f\n", s1.name, s1.age, s1.marks);
+            </code></pre>
+        </section>
+        <section id="fileio">
+            <h2>File Input/Output</h2>
+            <p>
+                C can read and write files using <code>FILE*</code> pointers and functions like <code>fopen()</code>, <code>fprintf()</code>, <code>fscanf()</code>, and <code>fclose()</code>. Example:
+            </p>
+            <button onclick="toggleCode('code10')">Show/Hide Example</button>
+            <pre id="code10" style="display:none;"><code>
+FILE *fp = fopen("data.txt", "w");
+if (fp != NULL) {
+    fprintf(fp, "Hello, file!\n");
+    fclose(fp);
+}
+            </code></pre>
+        </section>
+        <section id="preprocessor">
+            <h2>Preprocessor Directives and Macros</h2>
+            <p>
+                Preprocessor directives start with <code>#</code> and are processed before compilation. Common directives are <code>#include</code>, <code>#define</code>, <code>#ifdef</code>. Macros define constants or functions. Example:
+            </p>
+            <button onclick="toggleCode('code11')">Show/Hide Example</button>
+            <pre id="code11" style="display:none;"><code>
+#define PI 3.14159
+#define SQUARE(x) ((x)*(x))
+
+printf("Area: %.2f\n", PI * SQUARE(5));
+            </code></pre>
+        </section>
+        <section id="dynamic">
+            <h2>Dynamic Data Structures</h2>
+            <p>
+                C enables creation of dynamic data structures like linked lists, stacks, and queues using pointers and structs. Example of a simple linked list node:
+            </p>
+            <button onclick="toggleCode('code12')">Show/Hide Example</button>
+            <pre id="code12" style="display:none;"><code>
+struct Node {
+    int data;
+    struct Node* next;
+};
+            </code></pre>
+        </section>
+        <section id="error">
+            <h2>Error Handling</h2>
+            <p>
+                C does not have built-in exception handling, but errors can be managed using return values, <code>errno</code>, and checking function results. Example:
+            </p>
+            <button onclick="toggleCode('code13')">Show/Hide Example</button>
+            <pre id="code13" style="display:none;"><code>
+FILE *fp = fopen("nofile.txt", "r");
+if (fp == NULL) {
+    perror("Error opening file");
+}
+            </code></pre>
+        </section>
+        <section id="advanced">
+            <h2>Advanced Topics: Optimization and Inline Assembly</h2>
+            <p>
+                Optimization involves writing efficient code, minimizing memory usage, and using algorithms wisely. Inline assembly allows direct hardware manipulation for performance-critical tasks. Example:
+            </p>
+            <button onclick="toggleCode('code14')">Show/Hide Example</button>
+            <pre id="code14" style="display:none;"><code>
+__asm__("movl $1, %eax");
+            </code></pre>
+        </section>
+        <section id="best">
+            <h2>Best Practices and Modern C</h2>
+            <p>
+                Write clean, maintainable code. Use meaningful names, comment wisely, and follow consistent formatting. Modern C standards (C99, C11) add features like inline functions, variable-length arrays, and improved type safety. Use libraries, static analyzers, and debuggers to improve productivity and code quality.
+            </p>
+        </section>
+        <section class="contact" id="contact">
+            <h2>Contact Details</h2>
+            <p><strong>Phone:</strong> 9875406985</p>
+            <p><strong>Email:</strong> <a href="mailto:sagnikdam29@gmail.com">sagnikdam29@gmail.com</a></p>
+        </section>
+        <section class="review-form" id="review">
+            <h2>Post a Review</h2>
+            <form>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="review">Your Review:</label>
+                <textarea id="review" name="review" rows="4" required></textarea>
+                <button type="submit">Submit Review</button>
+            </form>
+            <div id="reviews"></div>
+        </section>
+    </main>
+</body>
