@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pointers</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<h2>Pointers in C</h2>
+<p>Pointer stores memory address.</p>
+
+<pre id="code">
+int a=10;
+int *p=&a;
+printf("%d",*p);
+</pre>
+
+<button onclick="copyCode()">Copy</button>
+<button onclick="markComplete('pointers')">Complete</button>
+
+<script src="../js/progress.js"></script>
+<script src="js/back.js"></script>
+<button class="back-btn" onclick="goBack()">← Back</button>
+<script src="../js/auth.js"></script>
+<script>
+checkAuth();
+function copyCode(){
+navigator.clipboard.writeText(code.innerText);
+}
+</script>
+
+</body>
+</html>

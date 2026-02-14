@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Recursion</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<h2>Recursion in C</h2>
+
+<p>Recursion is when a function calls itself.</p>
+
+<pre id="codeBlock">
+int fact(int n){
+  if(n==1) return 1;
+  return n * fact(n-1);
+}
+</pre>
+
+<button onclick="copyCode()">Copy</button>
+<button onclick="markComplete('recursion')">Mark Complete</button>
+
+<script src="../js/progress.js"></script>
+<script>
+function copyCode(){
+ navigator.clipboard.writeText(document.getElementById("codeBlock").innerText);
+ alert("Copied!");
+}
+</script>
+<script src="js/back.js"></script>
+<button class="back-btn" onclick="goBack()">← Back</button>
+<script src="../js/auth.js"></script>
+<script>
+checkAuth();
+</script>
+</body>
+</html>
