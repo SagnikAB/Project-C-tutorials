@@ -1,26 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Quiz</title>
+<meta charset="UTF-8">
+<title>C Quiz</title>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/quiz.css">
 </head>
+
 <body>
 
-<h2 id="question"></h2>
-<div id="answers">
-<button onclick="submitQuiz('a')" id="a_text"></button>
-<button onclick="submitQuiz('b')" id="b_text"></button>
+<div class="quiz-container fade">
+
+  <h1>Exercise</h1>
+  <p id="question"></p>
+
+  <div class="options">
+    <label><input type="radio" name="opt" value="a"><span id="a"></span></label>
+    <label><input type="radio" name="opt" value="b"><span id="b"></span></label>
+    <label><input type="radio" name="opt" value="c"><span id="c"></span></label>
+    <label><input type="radio" name="opt" value="d"><span id="d"></span></label>
+  </div>
+
+  <button onclick="submitQuiz()">Submit Answer »</button>
+
 </div>
 
 <script src="js/quiz.js"></script>
-<script src="js/back.js"></script>
-<button class="back-btn" onclick="goBack()">← Back</button>
-
-<script src="js/auth.js"></script>
-<script>
-checkAuth();
-loadQuiz();
-</script>
-
 </body>
 </html>
