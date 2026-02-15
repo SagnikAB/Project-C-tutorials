@@ -9,9 +9,11 @@
 
 <body>
 
-<div class="quiz-container fade">
+<section class="topic-container fade">
 
-  <h1>Exercise</h1>
+<div class="quiz-container">
+
+  <h1>C Programming Exercise</h1>
   <p id="question"></p>
 
   <div class="options">
@@ -25,6 +27,28 @@
 
 </div>
 
+</section>
+
+<!-- FOOTER -->
+<footer class="cred-card fade">
+<h3>Connect with Me</h3>
+<div class="links">
+<a href="https://github.com/SagnikAB" target="_blank">GitHub</a>
+<a href="https://x.com/29Sagnik" target="_blank">Twitter</a>
+<a href="https://www.instagram.com/s4g.n1k_/" target="_blank">Instagram</a>
+</div>
+</footer>
+
+<!-- SCRIPTS -->
 <script src="js/quiz.js"></script>
+
+<script src="js/back.js"></script>
+<button class="back-btn" onclick="goBack()">← Back</button>
+
+<script src="js/auth.js"></script>
+<script>
+checkAuth();
+</script>
+
 </body>
 </html>

@@ -1,40 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>C Tutorials</title>
+<title>C Learning Platform</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<header>
-  <h1>C Learning Platform</h1>
-  <input id="searchBar" placeholder="Search topics...">
-  <div>
-    <button id="themeToggle">🌙</button>
-    <button onclick="logout()">Logout</button>
-  </div>
+<header class="center">
+<h1>C Learning Platform</h1>
+<input id="searchBar" placeholder="Search topics...">
+<div>
+<button id="themeToggle">🌙</button>
+<button onclick="logout()">Logout</button>
+</div>
 </header>
 
-<nav>
-  <a href="topics.html" class="btn-link">
-  <button>Topics</button>
-</a>
-  <a href="quiz.html" class="btn-link"><button>Quiz</button></a>
-  <a href="practice.html" class="btn-link"><button>Practice</button></a>
-  <a href="cheatsheet.html" class="btn-link"><button>Cheatsheet</button></a>
+<nav class="navBtns">
+<a href="topics.html"><button>Topics</button></a>
+<a href="quiz.html"><button>Quiz</button></a>
+<a href="practice.html"><button>Practice</button></a>
+<a href="cheatsheet.html"><button>Cheatsheet</button></a>
 </nav>
 
 <section class="hero fade">
-  <h2>Welcome, Learn C Step-by-Step</h2>
-  <p>Interactive tutorials, quizzes & progress tracking.</p>
+<h2>Welcome, Learn C Step-by-Step</h2>
+<p>Interactive tutorials, quizzes & progress tracking.</p>
 </section>
 
-<script src="js/auth.js"></script>
+<footer class="cred-card fade">
+<h3>Connect with Me</h3>
+<div class="links">
+<a href="https://github.com/SagnikAB">GitHub</a>
+<a href="https://x.com/29Sagnik">Twitter</a>
+<a href="https://www.instagram.com/s4g.n1k_/">Instagram</a>
+</div>
+</footer>
+
 <script src="js/theme.js"></script>
-<script src="js/search.js"></script>
-<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
 <script>checkAuth();</script>
 </body>
 </html>

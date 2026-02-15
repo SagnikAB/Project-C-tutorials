@@ -1,33 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Pointers</title>
+<meta charset="UTF-8">
+<title>Pointers in C</title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
 
-<h2>Pointers in C</h2>
-<p>Pointer stores memory address.</p>
+<section class="topic-container fade">
 
-<pre id="code">
-int a=10;
-int *p=&a;
-printf("%d",*p);
-</pre>
+  <h2>Pointers in C</h2>
 
-<button onclick="copyCode()">Copy</button>
-<button onclick="markComplete('pointers')">Complete</button>
+  <p>
+    A <strong>pointer</strong> is a variable that stores the 
+    <strong>memory address</strong> of another variable instead of a direct value.
+    Pointers help in efficient memory management and advanced programming.
+  </p>
 
-<script src="../js/progress.js"></script>
-<script src="js/back.js"></script>
+  <h3>Why Use Pointers?</h3>
+  <ul>
+    <li>Efficient memory usage</li>
+    <li>Pass variables by reference</li>
+    <li>Dynamic memory allocation</li>
+    <li>Array and string handling</li>
+  </ul>
+
+  <h3>Basic Example</h3>
+
+<pre id="codeBlock"><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 10;
+    int *p = &a;
+
+    printf("Value of a: %d\n", a);
+    printf("Address of a: %p\n", &a);
+    printf("Pointer value: %p\n", p);
+    printf("Value using pointer: %d\n", *p);
+
+    return 0;
+}
+</code></pre>
+
+  <h3>Expected Output</h3>
+  <div class="output">
+Value of a: 10  
+Address of a: 0x7ffd...  
+Pointer value: 0x7ffd...  
+Value using pointer: 10
+  </div>
+
+  <h3>Pointer to Pointer</h3>
+
+<pre><code>
+int a = 5;
+int *p = &a;
+int **pp = &p;
+
+printf("%d", **pp);
+</code></pre>
+
+  <h3>Output</h3>
+  <div class="output">5</div>
+
+  <h3>Common Mistakes</h3>
+  <ul>
+    <li>Using uninitialized pointers</li>
+    <li>Dereferencing NULL pointers</li>
+    <li>Memory leaks with malloc</li>
+  </ul>
+
+  <div class="btns">
+    <button onclick="copyCode()">Copy Code</button>
+    <button id="completeBtn" onclick="markComplete()">Mark Complete</button>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="cred-card fade">
+  <h3>Connect with Me</h3>
+  <div class="links">
+    <a href="https://github.com/SagnikAB" target="_blank">GitHub</a>
+    <a href="https://x.com/29Sagnik" target="_blank">Twitter</a>
+    <a href="https://www.instagram.com/s4g.n1k_/" target="_blank">Instagram</a>
+  </div>
+</footer>
+
+<!-- JS -->
+<script>
+function copyCode() {
+  const code = document.getElementById("codeBlock").innerText;
+  navigator.clipboard.writeText(code);
+  alert("Code copied!");
+}
+
+function markComplete() {
+  localStorage.setItem("pointerTopic","done");
+  const btn = document.getElementById("completeBtn");
+  btn.innerText = "Completed ✓";
+  btn.disabled = true;
+}
+
+window.onload = () => {
+  if(localStorage.getItem("pointerTopic")==="done"){
+    const btn = document.getElementById("completeBtn");
+    btn.innerText = "Completed ✓";
+    btn.disabled = true;
+  }
+}
+</script>
+
+<script src="../js/back.js"></script>
 <button class="back-btn" onclick="goBack()">← Back</button>
+
 <script src="../js/auth.js"></script>
 <script>
 checkAuth();
-function copyCode(){
-navigator.clipboard.writeText(code.innerText);
-}
 </script>
+
+<script>
+initProgress("pointers");   // change per topic
+</script>
+
+<button id="completeBtn" onclick="markComplete('pointers')">
+Mark Complete
+</button>
 
 </body>
 </html>

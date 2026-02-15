@@ -1,21 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Cheatsheet</title>
+<meta charset="UTF-8">
+<title>C Cheatsheet</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<h2>C Cheatsheet</h2>
+<section class="topic-container fade">
+
+<h2>C Programming Cheatsheet</h2>
+
+<p>
+Quick reference for commonly used C functions and syntax.
+Use this page when you need fast recall while coding.
+</p>
+
+<h3>Input / Output</h3>
 <ul>
-<li>printf()</li>
-<li>scanf()</li>
-<li>malloc()</li>
-<li>free()</li>
+<li><code>printf()</code> – Print output</li>
+<li><code>scanf()</code> – Take input</li>
+<li><code>puts()</code> – Print string with newline</li>
+<li><code>gets()</code> – Read string</li>
 </ul>
+
+<h3>Memory Management</h3>
+<ul>
+<li><code>malloc()</code> – Allocate memory</li>
+<li><code>calloc()</code> – Allocate and initialize memory</li>
+<li><code>realloc()</code> – Resize memory block</li>
+<li><code>free()</code> – Release memory</li>
+</ul>
+
+<h3>Loops</h3>
+<ul>
+<li><code>for</code> – Fixed iteration</li>
+<li><code>while</code> – Condition loop</li>
+<li><code>do while</code> – Runs at least once</li>
+</ul>
+
+<h3>Strings</h3>
+<ul>
+<li><code>strlen()</code> – Length of string</li>
+<li><code>strcpy()</code> – Copy string</li>
+<li><code>strcmp()</code> – Compare strings</li>
+<li><code>strcat()</code> – Concatenate strings</li>
+</ul>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="cred-card fade">
+<h3>Connect with Me</h3>
+<div class="links">
+<a href="https://github.com/SagnikAB" target="_blank">GitHub</a>
+<a href="https://x.com/29Sagnik" target="_blank">Twitter</a>
+<a href="https://www.instagram.com/s4g.n1k_/" target="_blank">Instagram</a>
+</div>
+</footer>
+
+<!-- BACK BUTTON -->
 <script src="js/back.js"></script>
 <button class="back-btn" onclick="goBack()">← Back</button>
+
+<!-- AUTH -->
 <script src="js/auth.js"></script>
-<script>checkAuth();</script>
+<script>
+checkAuth();
+</script>
+
 </body>
 </html>

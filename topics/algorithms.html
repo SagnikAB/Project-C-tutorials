@@ -1,41 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Algorithms</title>
+<meta charset="UTF-8">
+<title>Algorithms - Bubble Sort</title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
 
-<h2>Bubble Sort</h2>
+<section class="topic-container fade">
 
-<pre id="codeBlock">
-for(int i=0;i<n-1;i++){
- for(int j=0;j<n-i-1;j++){
-  if(arr[j] > arr[j+1]){
-   int t = arr[j];
-   arr[j] = arr[j+1];
-   arr[j+1] = t;
+<h2>Bubble Sort Algorithm</h2>
+
+<p>
+<b>Bubble Sort</b> is a simple sorting algorithm that repeatedly steps
+through the list, compares adjacent elements, and swaps them if they
+are in the wrong order. It is easy to understand but not efficient for large data.
+</p>
+
+<h3>How It Works</h3>
+<ul>
+<li>Compare two adjacent elements</li>
+<li>Swap if they are in the wrong order</li>
+<li>Repeat until array is sorted</li>
+<li>Worst Time Complexity: O(n²)</li>
+</ul>
+
+<h3>Code Example</h3>
+
+<pre id="codeBlock"><code>
+for(int i = 0; i &lt; n-1; i++){
+  for(int j = 0; j &lt; n-i-1; j++){
+    if(arr[j] &gt; arr[j+1]){
+      int t = arr[j];
+      arr[j] = arr[j+1];
+      arr[j+1] = t;
+    }
   }
- }
 }
-</pre>
+</code></pre>
 
-<button onclick="copyCode()">Copy</button>
-<button onclick="markComplete('algorithms')">Mark Complete</button>
+<h3>Expected Output</h3>
+<div class="output">
+Input: 5 3 1  
+Output: 1 3 5
+</div>
 
-<script src="../js/progress.js"></script>
+<h3>When to Use</h3>
+<ul>
+<li>Learning basic sorting concepts</li>
+<li>Very small datasets</li>
+<li>Not recommended for large arrays</li>
+</ul>
+
+<div class="btns">
+<button onclick="copyCode()">Copy Code</button>
+<button id="completeBtn" onclick="markComplete()">Mark Complete</button>
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="cred-card fade">
+<h3>Connect with Me</h3>
+<div class="links">
+<a href="https://github.com/SagnikAB" target="_blank">GitHub</a>
+<a href="https://x.com/29Sagnik" target="_blank">Twitter</a>
+<a href="https://www.instagram.com/s4g.n1k_/" target="_blank">Instagram</a>
+</div>
+</footer>
+
+<!-- JS -->
 <script>
 function copyCode(){
- navigator.clipboard.writeText(document.getElementById("codeBlock").innerText);
- alert("Copied!");
+  const code = document.getElementById("codeBlock").innerText;
+  navigator.clipboard.writeText(code);
+  alert("Code copied!");
+}
+
+function markComplete(){
+  localStorage.setItem("algoTopic","done");
+  const btn = document.getElementById("completeBtn");
+  btn.innerText = "Completed ✓";
+  btn.disabled = true;
+}
+
+window.onload = () => {
+  if(localStorage.getItem("algoTopic")==="done"){
+    const btn = document.getElementById("completeBtn");
+    btn.innerText = "Completed ✓";
+    btn.disabled = true;
+  }
 }
 </script>
-<script src="js/back.js"></script>
+
+<script src="../js/back.js"></script>
 <button class="back-btn" onclick="goBack()">← Back</button>
-<script src="js/auth.js"></script>
+
+<script src="../js/auth.js"></script>
 <script>
 checkAuth();
 </script>
+
+<script>
+initProgress("algorithms");   // change per topic
+</script>
+
+<button id="completeBtn" onclick="markComplete('pointers')">
+Mark Complete
+</button>
 
 </body>
 </html>

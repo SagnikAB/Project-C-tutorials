@@ -1,37 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Recursion</title>
+<meta charset="UTF-8">
+<title>Recursion in C</title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
+
+<section class="topic-container fade">
 
 <h2>Recursion in C</h2>
 
-<p>Recursion is when a function calls itself.</p>
+<p>
+<b>Recursion</b> is a technique where a function calls itself
+until a <strong>base condition</strong> is reached.
+It is useful for problems that can be broken into smaller sub-problems.
+</p>
 
-<pre id="codeBlock">
+<h3>Why Use Recursion?</h3>
+<ul>
+<li>Cleaner and shorter code</li>
+<li>Useful for trees and graphs</li>
+<li>Ideal for divide-and-conquer algorithms</li>
+<li>Solves repetitive problems easily</li>
+</ul>
+
+<h3>Factorial Example</h3>
+
+<pre id="codeBlock"><code>
+#include &lt;stdio.h&gt;
+
 int fact(int n){
-  if(n==1) return 1;
+  if(n == 1) return 1;
   return n * fact(n-1);
 }
-</pre>
 
-<button onclick="copyCode()">Copy</button>
-<button onclick="markComplete('recursion')">Mark Complete</button>
+int main(){
+  printf("%d", fact(5));
+}
+</code></pre>
 
-<script src="../js/progress.js"></script>
+<h3>Expected Output</h3>
+<div class="output">
+120
+</div>
+
+<h3>Important Rules</h3>
+<ul>
+<li>Always define a base case</li>
+<li>Avoid infinite recursion</li>
+<li>Too deep recursion can cause stack overflow</li>
+</ul>
+
+<div class="btns">
+<button onclick="copyCode()">Copy Code</button>
+<button id="completeBtn" onclick="markComplete()">Mark Complete</button>
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="cred-card fade">
+<h3>Connect with Me</h3>
+<div class="links">
+<a href="https://github.com/SagnikAB" target="_blank">GitHub</a>
+<a href="https://x.com/29Sagnik" target="_blank">Twitter</a>
+<a href="https://www.instagram.com/s4g.n1k_/" target="_blank">Instagram</a>
+</div>
+</footer>
+
+<!-- JS -->
 <script>
 function copyCode(){
- navigator.clipboard.writeText(document.getElementById("codeBlock").innerText);
- alert("Copied!");
+  const code = document.getElementById("codeBlock").innerText;
+  navigator.clipboard.writeText(code);
+  alert("Code copied!");
+}
+
+function markComplete(){
+  localStorage.setItem("recursionTopic","done");
+  const btn = document.getElementById("completeBtn");
+  btn.innerText = "Completed ✓";
+  btn.disabled = true;
+}
+
+window.onload = () => {
+  if(localStorage.getItem("recursionTopic")==="done"){
+    const btn = document.getElementById("completeBtn");
+    btn.innerText = "Completed ✓";
+    btn.disabled = true;
+  }
 }
 </script>
-<script src="js/back.js"></script>
+
+<script src="../js/back.js"></script>
 <button class="back-btn" onclick="goBack()">← Back</button>
+
 <script src="../js/auth.js"></script>
 <script>
 checkAuth();
 </script>
+
+<script>
+initProgress("recursion");   // change per topic
+</script>
+
+<button id="completeBtn" onclick="markComplete('pointers')">
+Mark Complete
+</button>
+
 </body>
 </html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Data Structures - Linked List</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<section class="topic-container fade">
+
+<h2>Linked List (Data Structure)</h2>
+
+<p>
+A <strong>Linked List</strong> is a collection of nodes where each node stores
+data and a pointer to the next node in the list.
+Unlike arrays, linked lists are <b>dynamic</b> and do not require continuous memory.
+</p>
+
+<h3>Why Use Linked Lists?</h3>
+<ul>
+<li>Dynamic size (grow or shrink easily)</li>
+<li>Efficient insertion and deletion</li>
+<li>No memory wastage</li>
+<li>Used in stacks, queues, graphs</li>
+</ul>
+
+<h3>Basic Node Creation Example</h3>
+
+<pre id="codeBlock"><code>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+struct Node {
+  int data;
+  struct Node* next;
+};
+
+int main() {
+  struct Node* head = (struct Node*) malloc(sizeof(struct Node));
+  head->data = 10;
+  head->next = NULL;
+
+  printf("Node Data: %d", head->data);
+  return 0;
+}
+</code></pre>
+
+<h3>Expected Output</h3>
+<div class="output">
+Node Data: 10
+</div>
+
+<h3>Common Mistakes</h3>
+<ul>
+<li>Forgetting to free allocated nodes</li>
+<li>Not updating next pointers correctly</li>
+<li>Accessing NULL nodes</li>
+</ul>
+
+<div class="btns">
+<button onclick="copyCode()">Copy Code</button>
+<button id="completeBtn" onclick="markComplete()">Mark Complete</button>
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="cred-card fade">
+<h3>Connect with Me</h3>
+<div class="links">
+<a href="https://github.com/SagnikAB" target="_blank">GitHub</a>
+<a href="https://x.com/29Sagnik" target="_blank">Twitter</a>
+<a href="https://www.instagram.com/s4g.n1k_/" target="_blank">Instagram</a>
+</div>
+</footer>
+
+<!-- JS -->
+<script>
+function copyCode(){
+  const code = document.getElementById("codeBlock").innerText;
+  navigator.clipboard.writeText(code);
+  alert("Code copied!");
+}
+
+function markComplete(){
+  localStorage.setItem("dsTopic","done");
+  const btn = document.getElementById("completeBtn");
+  btn.innerText = "Completed ✓";
+  btn.disabled = true;
+}
+
+window.onload = () => {
+  if(localStorage.getItem("dsTopic")==="done"){
+    const btn = document.getElementById("completeBtn");
+    btn.innerText = "Completed ✓";
+    btn.disabled = true;
+  }
+}
+</script>
+
+<script src="../js/back.js"></script>
+<button class="back-btn" onclick="goBack()">← Back</button>
+
+<script src="../js/auth.js"></script>
+<script>
+checkAuth();
+</script>
+
+<script>
+initProgress("dataStructures");   // change per topic
+</script>
+
+<button id="completeBtn" onclick="markComplete('pointers')">
+Mark Complete
+</button>
+
+</body>
+</html>

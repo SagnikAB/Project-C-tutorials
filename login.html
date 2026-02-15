@@ -1,17 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>Login</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="center">
 
+<section class="card fade">
+
 <h2>Login</h2>
+
 <input id="logUser" placeholder="Username">
 <input id="logPass" type="password" placeholder="Password">
-<button onclick="login()">Login</button>
-<p>No account? <a href="register.html">Register</a></p>
 
+<button onclick="login()">Login</button>
+
+<p class="small">
+No account?
+<a href="register.html" class="linkBtn">Register</a>
+</p>
+
+<button id="themeToggle" class="themeBtn">🌙 Toggle Theme</button>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="cred-card fade">
+<h3>Connect with Me</h3>
+<div class="links">
+<a href="https://github.com/SagnikAB" target="_blank">GitHub</a>
+<a href="https://x.com/29Sagnik" target="_blank">Twitter</a>
+<a href="https://www.instagram.com/s4g.n1k_/" target="_blank">Instagram</a>
+</div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="js/theme.js"></script>
 <script src="js/auth.js"></script>
+
+<script>
+redirectIfLoggedIn();
+</script>
+
 </body>
 </html>

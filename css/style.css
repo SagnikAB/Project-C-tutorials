@@ -239,3 +239,91 @@ pre{
 .back-btn:hover{
   transform:scale(1.05);
 }
+/* TOPIC PAGE CONTAINER */
+.topic-container{
+  max-width:900px;
+  margin:40px auto;
+  padding:30px;
+}
+
+/* OUTPUT BOX */
+.output{
+  margin-top:15px;
+  background:#111827;
+  color:#e5e7eb;
+  padding:15px;
+  border-radius:10px;
+  font-weight:600;
+}
+
+body.dark .output{
+  background:#020617;
+}
+
+/* BUTTON WRAPPER */
+.btns{
+  margin-top:20px;
+}
+
+/* FOOTER CREDENTIAL CARD */
+.cred-card{
+  margin:60px auto;
+  max-width:500px;
+  text-align:center;
+  padding:25px;
+  border-radius:16px;
+  background:rgba(255,255,255,0.2);
+  backdrop-filter:blur(12px);
+  box-shadow:0 8px 25px rgba(0,0,0,0.2);
+}
+
+body.dark .cred-card{
+  background:rgba(31,41,55,0.7);
+}
+
+.links a{
+  text-decoration:none;
+  margin:0 12px;
+  font-weight:600;
+  color:#7c3aed;
+}
+
+.links a:hover{
+  color:#6366f1;
+}
+
+/* TOPIC GRID BUTTONS */
+.topicGrid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  justify-content:center;
+  margin-top:30px;
+}
+
+.btn{
+  padding:14px 24px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#6366f1,#a855f7);
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+}
+
+/* SMALL TEXT */
+.small{
+  font-size:14px;
+  opacity:0.8;
+  margin-top:10px;
+}
+
+/* SUBTITLE */
+.subtitle{
+  opacity:0.8;
+  margin-bottom:25px;
+}

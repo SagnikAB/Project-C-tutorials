@@ -1,43 +1,129 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Memory Management</title>
-  <link rel="stylesheet" href="../css/style.css">
+<meta charset="UTF-8">
+<title>Memory Management in C</title>
+<link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
 
-<h2>Memory Management in C</h2>
+<section class="topic-container fade">
 
-<p>C allows manual memory allocation using malloc, calloc, realloc and free.</p>
+  <h2>Memory Management in C</h2>
 
-<pre id="codeBlock">
-#include <stdio.h>
-#include <stdlib.h>
+  <p>
+    <strong>Dynamic Memory Management</strong> allows programs to allocate memory 
+    during runtime using functions like <code>malloc()</code>, 
+    <code>calloc()</code>, <code>realloc()</code>, and <code>free()</code>.
+    It is useful when the amount of memory needed is not known in advance.
+  </p>
+
+  <h3>Why Use Dynamic Memory?</h3>
+  <ul>
+    <li>Efficient use of memory</li>
+    <li>Allocate memory only when needed</li>
+    <li>Useful for large data structures</li>
+    <li>Flexible program design</li>
+  </ul>
+
+  <h3>Basic malloc / free Example</h3>
+
+<pre id="codeBlock"><code>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
 
 int main() {
     int *ptr = (int*) malloc(sizeof(int));
-    *ptr = 10;
+
+    if (ptr == NULL) {
+        printf("Memory allocation failed");
+        return 1;
+    }
+
+    *ptr = 5;
     printf("%d", *ptr);
+
     free(ptr);
     return 0;
 }
-</pre>
+</code></pre>
 
-<button onclick="copyCode()">Copy Code</button>
-<button onclick="markComplete('memory')">Mark Complete</button>
+  <h3>Output</h3>
+  <div class="output">
+    5
+  </div>
 
-<script src="../js/progress.js"></script>
+  <h3>Other Memory Functions</h3>
+  <ul>
+    <li><code>calloc()</code> – Allocates multiple blocks and initializes to 0</li>
+    <li><code>realloc()</code> – Resizes previously allocated memory</li>
+    <li><code>free()</code> – Releases allocated memory</li>
+  </ul>
+
+  <h3>Common Mistakes</h3>
+  <ul>
+    <li>Forgetting to call <code>free()</code> (memory leak)</li>
+    <li>Using memory after freeing it</li>
+    <li>Not checking if <code>malloc()</code> returned NULL</li>
+  </ul>
+
+  <div class="btns">
+    <button onclick="copyCode()">Copy Code</button>
+    <button id="completeBtn" onclick="markComplete()">Mark Complete</button>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="cred-card fade">
+  <h3>Connect with Me</h3>
+  <div class="links">
+    <a href="https://github.com/SagnikAB" target="_blank">GitHub</a>
+    <a href="https://x.com/29Sagnik" target="_blank">Twitter</a>
+    <a href="https://www.instagram.com/s4g.n1k_/" target="_blank">Instagram</a>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
 <script>
-function copyCode(){
-  navigator.clipboard.writeText(document.getElementById("codeBlock").innerText);
-  alert("Copied!");
+function copyCode() {
+  const code = document.getElementById("codeBlock").innerText;
+  navigator.clipboard.writeText(code);
+  alert("Code copied!");
+}
+
+function markComplete() {
+  localStorage.setItem("memoryTopic","done");
+  const btn = document.getElementById("completeBtn");
+  btn.innerText = "Completed ✓";
+  btn.disabled = true;
+}
+
+window.onload = () => {
+  if(localStorage.getItem("memoryTopic")==="done"){
+    const btn = document.getElementById("completeBtn");
+    btn.innerText = "Completed ✓";
+    btn.disabled = true;
+  }
 }
 </script>
-<script src="js/back.js"></script>
+
+<script src="../js/back.js"></script>
 <button class="back-btn" onclick="goBack()">← Back</button>
-<script src="js/auth.js"></script>
+
+<script src="../js/auth.js"></script>
 <script>
 checkAuth();
 </script>
+
+<script>
+initProgress("memory");   // change per topic
+</script>
+
+<button id="completeBtn" onclick="markComplete('pointers')">
+Mark Complete
+</button>
+
 </body>
 </html>

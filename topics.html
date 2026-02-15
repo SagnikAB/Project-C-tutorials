@@ -1,38 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Topics</title>
+<meta charset="UTF-8">
+<title>C Topics</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<div class="topicList">
+<section class="topic-container fade">
 
-<a href="topics/pointers.html" class="btn-link">
-<button>Pointers</button>
-</a>
+<h2 class="title">C Programming Topics</h2>
 
-<a href="topics/memory.html" class="btn-link">
-<button>Memory</button>
-</a>
+<p class="center subtitle">
+Explore key C programming concepts with interactive tutorials and real code examples.
+</p>
 
-<a href="topics/recursion.html" class="btn-link">
-<button>Recursion</button>
-</a>
-
-<a href="topics/algorithms.html" class="btn-link">
-<button>Algorithms</button>
-</a>
-
-<a href="topics/ds.html" class="btn-link">
-<button>Data Structures</button>
-</a>
-
+<div class="topicGrid">
+  <a href="topics/pointers.html" class="btn">Pointers</a>
+  <a href="topics/memory.html" class="btn">Memory Management</a>
+  <a href="topics/recursion.html" class="btn">Recursion</a>
+  <a href="topics/algorithms.html" class="btn">Algorithms</a>
+  <a href="topics/ds.html" class="btn">Data Structures</a>
 </div>
 
+</section>
 
+<!-- FOOTER -->
+<footer class="cred-card fade">
+<h3>Connect with Me</h3>
+<div class="links">
+<a href="https://github.com/SagnikAB" target="_blank">GitHub</a>
+<a href="https://x.com/29Sagnik" target="_blank">Twitter</a>
+<a href="https://www.instagram.com/s4g.n1k_/" target="_blank">Instagram</a>
+</div>
+</footer>
+
+<!-- BACK BUTTON -->
+<script src="js/back.js"></script>
+<button class="back-btn" onclick="goBack()">← Back</button>
+
+<!-- THEME + AUTH -->
+<script src="js/theme.js"></script>
 <script src="js/auth.js"></script>
-<script>checkAuth();</script>
+<script>
+checkAuth();
+</script>
 
 </body>
 </html>
